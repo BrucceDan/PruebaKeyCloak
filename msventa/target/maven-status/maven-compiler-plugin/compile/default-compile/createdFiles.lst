@@ -1,0 +1,3 @@
+com\proyecto\msventa\config\RestTemplateConfig.class
+com\proyecto\msventa\MsventaApplication.class
+com\proyecto\msventa\controller\VentasController.class

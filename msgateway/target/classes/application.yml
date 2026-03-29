@@ -1,0 +1,28 @@
+server:
+  port: 8081
+
+spring:
+  cloud:
+    gateway:
+      routes:
+
+        - id: productos
+          uri: http://msproductos:8082
+          predicates:
+            - Path=/productos/**
+
+        - id: almacen
+          uri: http://msalmacen:8083
+          predicates:
+            - Path=/almacen/**
+
+        - id: ventas
+          uri: http://msventa:8084
+          predicates:
+            - Path=/ventas/**
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://keycloak:8080/realms/microservices-realm
